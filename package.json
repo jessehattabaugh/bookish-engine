@@ -1,18 +1,22 @@
 {
 	"author": "Jesse Hattabaugh<jessehattabaugh@protonmail.com>",
 	"bugs": {
-		"url": "https://github.com/jessehattabaugh/{{NAME}}/issues"
+		"url": "https://github.com/jessehattabaugh/bookish-engine/issues"
 	},
-	"description": "{{DESCRIPTION}}",
-	"homepage": "https://github.com/jessehattabaugh/{{NAME}}#readme",
+	"description": "a game you play with web components",
+	"devDependencies": {
+		"serve": "^14.0.1"
+	},
+	"homepage": "https://github.com/jessehattabaugh/bookish-engine#readme",
 	"license": "UNLICENSED",
-	"name": "{{NAME}}",
+	"name": "bookish-engine",
 	"private": true,
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jessehattabaugh/{{NAME}}.git"
+		"url": "git+https://github.com/jessehattabaugh/bookish-engine.git"
 	},
 	"scripts": {
+		"start": "serve www",
 		"test": "npx cowsay nothing to test"
 	},
 	"type": "module",
