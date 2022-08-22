@@ -1,54 +1,80 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 		<title>bookish-engine</title>
+		<style>
+			html,
+			body {
+				font-family: 'Courier New', Courier, monospace;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>bookish-engine</h1>
-
-		<p>
-			I had a thought; what if you could play a game with web components. Not <i>build</i>,
-			but <b>play</b>. What if the "game" just gives you primitive custom elements and you can
-			define, or <b>build</b> a playfield with them. The main way you "play" is by authoring
-			HTML in a text editor.
-		</p>
-
-		<h2>What could that look like?</h2>
-
-		<game>
-			<party>
-				<elf></elf>
-				<human></human>
-				<wizard></wizard>
-			</party>
-			<city>
-				<gate></gate>
-				<market></market>
-				<church></church>
-				<castle></castle>
-				<inn></inn>
-				<sewar></sewar>
-			</city>
-		</game>
+		<game-be>
+			<player-be slot="player"></player-be>
+			<mountain-be>⛰️</mountain-be>
+			<tree-be>🌳</tree-be>
+			<tent-be>🎪</tent-be>
+			<grass-be>🌾</grass-be>
+			<deer-be>🦌</deer-be>
+			<flower-be>🌻</flower-be>
+			<house-be>🏡</house-be>
+			<fountain-be>⛲</fountain-be>
+			<church-be>⛪</church-be>
+			<jar-be>🏺</jar-be>
+		</game-be>
 
 		<script type="module">
-			console.log('🙋‍♂️');
 			import { LitElement, css, html } from 'https://cdn.skypack.dev/lit';
-			class BookishEngine extends LitElement {
-				// static styles = css`
-				// 	:host {
-				// 		color: blue;
-				// 	}
-				// `;
+
+			export class GameElement extends LitElement {
 				constructor() {
 					super();
-					// Declare reactive properties
-					//this.name = 'World';
 				}
+				static styles = css`
+					:host {
+						align-items: center;
+						display: flex;
+						font-size: 10vw;
+						height: 100vh;
+						outline: 1px dashed green;
+						overflow: scroll;
+						position: relative;
+						white-space: nowrap;
+						width: 100vw;
+					}
+					::slotted(*) {
+						outline: 1px dashed blue;
+					}
+				`;
 				render() {
-					return html`🍎`;
+					return html`
+						<slot name="player"></slot>
+						<slot></slot>
+					`;
 				}
 			}
-			customElements.define('bookish-engine', BookishEngine);
+
+			class PlayerElement extends LitElement {
+				constructor() {
+					super();
+				}
+				static styles = css`
+					:host {
+						outline: 1px dashed red;
+						position: absolute;
+					}
+				`;
+				render() {
+					return html`<span>🙂</span>`;
+				}
+			}
+			customElements.define('game-be', GameElement);
+			customElements.define('player-be', PlayerElement);
 		</script>
 	</body>
 </html>
