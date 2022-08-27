@@ -16,65 +16,18 @@
 	<body>
 		<game-be>
 			<player-be slot="player"></player-be>
-			<mountain-be>⛰️</mountain-be>
-			<tree-be>🌳</tree-be>
-			<tent-be>🎪</tent-be>
-			<grass-be>🌾</grass-be>
-			<deer-be>🦌</deer-be>
-			<flower-be>🌻</flower-be>
-			<house-be>🏡</house-be>
-			<fountain-be>⛲</fountain-be>
-			<church-be>⛪</church-be>
-			<jar-be>🏺</jar-be>
+			<thing-be>⛰️</thing-be>
+			<thing-be>🌳</thing-be>
+			<thing-be>🎪</thing-be>
+			<thing-be>🌾</thing-be>
+			<thing-be>🦌</thing-be>
+			<thing-be>🌻</thing-be>
+			<thing-be>🏡</thing-be>
+			<thing-be>⛲</thing-be>
+			<thing-be>⛪</thing-be>
+			<thing-be>🏺</thing-be>
 		</game-be>
 
-		<script type="module">
-			import { LitElement, css, html } from 'https://cdn.skypack.dev/lit';
-
-			export class GameElement extends LitElement {
-				constructor() {
-					super();
-				}
-				static styles = css`
-					:host {
-						align-items: center;
-						display: flex;
-						font-size: 10vw;
-						height: 100vh;
-						outline: 1px dashed green;
-						overflow: scroll;
-						position: relative;
-						white-space: nowrap;
-						width: 100vw;
-					}
-					::slotted(*) {
-						outline: 1px dashed blue;
-					}
-				`;
-				render() {
-					return html`
-						<slot name="player"></slot>
-						<slot></slot>
-					`;
-				}
-			}
-
-			class PlayerElement extends LitElement {
-				constructor() {
-					super();
-				}
-				static styles = css`
-					:host {
-						outline: 1px dashed red;
-						position: absolute;
-					}
-				`;
-				render() {
-					return html`<span>🙂</span>`;
-				}
-			}
-			customElements.define('game-be', GameElement);
-			customElements.define('player-be', PlayerElement);
-		</script>
+		<script type="module" src="index.js"></script>
 	</body>
 </html>
