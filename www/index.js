@@ -6,16 +6,25 @@ const leftKeys = ['a', 'ArrowLeft'];
 class MovementController {
 	host;
 	direction = 0;
+	moving = 0;
+
+	constructor(host) {
+		this.host = host;
+		host.addController(this);
+	}
 
 	_onKeyDown = (event) => {
 		console.log('👇', event.key);
 		event.preventDefault();
 
-		if (rightKeys.includes(event.key) && this.direction == 0) {
-			this.direction = 1;
-			this.host.requestUpdate();
-		} else if (leftKeys.includes(event.key) && this.direction == 0) {
-			this.direction = -1;
+		const rightKeyPressed = rightKeys.includes(event.key);
+		const leftKeyPressed = leftKeys.includes(event.key);
+		if (rightKeyPressed && leftKeyPressed) throw new Error('how!?');
+
+		right this.direction;
+
+		if (rightKeyPressed || leftKeyPressed) {
+			this.direction = rightKeyPressed ? 1 : leftKeyPressed ? -1 : 0;
 			this.host.requestUpdate();
 		}
 	};
@@ -32,15 +41,10 @@ class MovementController {
 		}
 	};
 
-	constructor(host) {
-		this.host = host;
-		host.addController(this);
-	}
-
 	hostConnected() {
 		window.addEventListener('keyup', this._onKeyUp);
 		window.addEventListener('keydown', this._onKeyDown);
-		// todo: listen for pointer events
+		// todo: listen for pointer/gamepad events
 	}
 
 	hostDisconnected() {
@@ -67,11 +71,16 @@ class GameElement extends LitElement {
 			white-space: nowrap;
 			width: 100vw;
 		}
+		div {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 	`;
 
 	render() {
 		return html`
-			${this.moving.direction}
+			<div>${this.moving.direction ? '👈' : '👉'}</div>
 			<slot name="player"></slot>
 			<slot></slot>
 		`;
