@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'https://cdn.skypack.dev/lit';
+import { LitElement, css, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
 const rightKeys = ['d', 'ArrowRight'];
 const leftKeys = ['a', 'ArrowLeft'];
@@ -21,7 +21,7 @@ class MovementController {
 		const leftKeyPressed = leftKeys.includes(event.key);
 		if (rightKeyPressed && leftKeyPressed) throw new Error('how!?');
 
-		right this.direction;
+		//right this.direction;
 
 		if (rightKeyPressed || leftKeyPressed) {
 			this.direction = rightKeyPressed ? 1 : leftKeyPressed ? -1 : 0;

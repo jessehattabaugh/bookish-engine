@@ -5,7 +5,7 @@
 	},
 	"description": "a game you play with web components",
 	"devDependencies": {
-		"serve": "^14.0.1"
+		"serve": "latest"
 	},
 	"homepage": "https://github.com/jessehattabaugh/bookish-engine#readme",
 	"license": "UNLICENSED",
