@@ -5,7 +5,8 @@
 	},
 	"description": "a game you play with web components",
 	"devDependencies": {
-		"serve": "latest"
+		"lit": "latest",
+		"parcel": "latest"
 	},
 	"homepage": "https://github.com/jessehattabaugh/bookish-engine#readme",
 	"license": "UNLICENSED",
@@ -16,8 +17,8 @@
 		"url": "git+https://github.com/jessehattabaugh/bookish-engine.git"
 	},
 	"scripts": {
-		"start": "serve www",
-		"test": "npx cowsay nothing to test"
+		"start": "parcel 'src/*.html'",
+		"build": "parcel build"
 	},
 	"type": "module",
 	"version": "0.0.0"

@@ -72,6 +72,4 @@ class PlayerElement extends ThingElement {
 }
 
 // define custom elements
-customElements.define('game-be', GameElement);
-customElements.define('player-be', PlayerElement);
-customElements.define('thing-be', ThingElement);
+customElements.define('race-be', GameElement);
