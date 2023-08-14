@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit';
 
-import { MovementController } from './movement-controller.js';
+import { MovementController } from './movement.js';
 
 class GameElement extends LitElement {
 	moving = new MovementController(this);
