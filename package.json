@@ -21,7 +21,7 @@
 		"clean": "git clean -fdx",
 		"start": "parcel 'www/*.html'",
 		"build": "parcel build",
-		"13thCentury:build": "parcel build --no-source-maps --no-content-hash 13thCentury/index.html --dist-dir 13thCentury/dist && bestzip 13thCentury.zip 13thCentury/dist/*",
+		"13thCentury:build": "parcel build --no-source-maps --no-content-hash 13thCentury/*.html --dist-dir 13thCentury/dist && bestzip 13thCentury.zip 13thCentury/dist/*",
 		"13thCentury:start": "parcel 13thCentury/index.html"
 	},
 	"type": "module",

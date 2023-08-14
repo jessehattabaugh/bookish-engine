@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>13th Century Game</title>
+		<link rel="stylesheet" media="screen" href="screen.css" />
+		<style>
+			aside {
+				display: grid;
+				place-items: center;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<aside>
+				<h1>The game has started</h1>
+			</aside>
+		</main>
+		<script type="module">
+			import { doTransition } from './lib.js';
+			async function fadeOutTitle() {
+				//console.debug('fading out the aside');
+				const aside = document.querySelector('aside');
+				await doTransition(() => {
+					aside.style.opacity = '0';
+					//console.debug('The aside has faded out');
+				});
+				aside.style.display = 'none';
+				//console.debug('The aside has been removed');
+			}
+			setTimeout(fadeOutTitle, 2000);
+		</script>
+	</body>
+</html>
