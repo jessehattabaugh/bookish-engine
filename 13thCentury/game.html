@@ -4,32 +4,204 @@
 		<title>13th Century Game</title>
 		<link rel="stylesheet" media="screen" href="screen.css" />
 		<style>
+			#sky {
+				background-color: skyblue;
+			}
+			#earth {
+				background-color: green;
+				height: 50vh;
+				top: 50%;
+			}
+			main > * {
+				display: flex;
+				place-items: center;
+				overflow: hidden;
+				font-size: 10em;
+			}
+			li {
+				display: inline-block;
+			}
+			.facingRight {
+				/* flip the emoji horizontally */
+				transform: scaleX(-1);
+			}
 			aside {
 				display: grid;
 				place-items: center;
-				height: 100%;
+				background: #000;
+				color: #fff;
+				font-size: 1em;
 			}
 		</style>
 	</head>
 	<body>
 		<main>
+			<div id="sky"></div>
+			<div id="earth"></div>
+			<ol>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+				<li>🌲</li>
+				<li>🌳</li>
+			</ol>
+			<article>
+				<div id="player" class="facingRight">🚶</div>
+			</article>
 			<aside>
-				<h1>The game has started</h1>
+				<h1>It's the 13th Century</h1>
 			</aside>
 		</main>
 		<script type="module">
 			import { doTransition } from './lib.js';
 			async function fadeOutTitle() {
-				//console.debug('fading out the aside');
+				//console.debug('fading out the title');
 				const aside = document.querySelector('aside');
 				await doTransition(() => {
 					aside.style.opacity = '0';
-					//console.debug('The aside has faded out');
+					//console.debug('The title has faded out');
 				});
 				aside.style.display = 'none';
-				//console.debug('The aside has been removed');
+				//console.debug('The title has been removed');
 			}
 			setTimeout(fadeOutTitle, 2000);
+
+			// handle keypresses
+			const leftKeys = ['ArrowLeft', 'a'];
+			const rightKeys = ['ArrowRight', 'd'];
+			document.addEventListener('keydown', (event) => {
+				const { key } = event;
+				console.debug('key pressed', { key });
+				if (leftKeys.includes(key) && rightKeys.includes(key)) {
+					console.debug('move nowhere');
+					return;
+				} else if (leftKeys.includes(key)) {
+					console.debug('move left');
+					const player = document.querySelector('#player');
+					player.classList.remove('facingRight');
+					player.style.left = '0';
+				} else if (rightKeys.includes(key)) {
+					console.debug('move right');
+					const player = document.querySelector('#player');
+					player.classList.add('facingRight');
+					player.style.left = '100%';
+				}
+			});
 		</script>
 	</body>
 </html>

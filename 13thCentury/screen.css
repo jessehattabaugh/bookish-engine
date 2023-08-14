@@ -1,14 +1,14 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 body,
 html,
-main {
+main, main > * {
 	display: block;
 	height: 100%;
 	left: 0;
-	margin: 0;
-	padding: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
-	background: #000;
-	color: #fff;
 }
